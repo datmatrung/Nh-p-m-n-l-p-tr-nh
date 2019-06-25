@@ -6,8 +6,8 @@ Console.Write(loichao);
 Console.ReadLine();
 
 2. Windows Form:
-Th_DongY.Click += (Th, Ts) => {
-var hoten = Th_HoTen.Text;
-var loichao = "Xin chào " + hoten + "\nĐây là chương trình C# đầu tiên của tôi";
-Th_LoiChao.Content = loichao;
+NutBam.Click += (Th, Ts) => {
+var hoten = NhapTen.Text;
+var xinchao = "Xin chào " + hoten + "\nĐây là chương trình C# đầu tiên của tôi";
+LoiChao.Content = xinchao;
 };
