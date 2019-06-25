@@ -1,0 +1,13 @@
+1. Console:
+Console.Title = "Xin chao";
+var hoten = Console.ReadLine();
+var loichao = "Xin chao " + hoten + "\nDay la chuong trinh C# dau tien cua toi";
+Console.Write(loichao);
+Console.ReadLine();
+
+2. Windows Form:
+Th_DongY.Click += (Th, Ts) => {
+var hoten = Th_HoTen.Text;
+var loichao = "Xin chào " + hoten + "\nĐây là chương trình C# đầu tiên của tôi";
+Th_LoiChao.Content = loichao;
+};
