@@ -1,8 +1,19 @@
-int a, b;
+double a, b;
 Console.Write("Nhap a: ");
-a = int.Parse(Console.Readline());
+a = double.Parse(Console.ReadLine());
 Console.Write("Nhap b: ");
-b = int.Parse(Console.Readline());
-if(a==0){
-  if(b==0){
-    Console.Write(
+b = double.Parse(Console.ReadLine());
+Console.WriteLine($"Giai phuong trinh bac 1: {a}x + {b} = 0");
+Console.ReadLine();
+if (a == 0){
+	if (b == 0){
+		Console.WriteLine("Phuong trinh co vo so nghiem");
+	}
+	else {
+		Console.WriteLine("Phuong trinh vo nghiem");
+	}
+}
+else {
+	Console.WriteLine($"Phuong trinh co nghiem x = {-b / a}");
+}
+Console.ReadLine();
