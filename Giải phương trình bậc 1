@@ -1,0 +1,8 @@
+int a, b;
+Console.Write("Nhap a: ");
+a = int.Parse(Console.Readline());
+Console.Write("Nhap b: ");
+b = int.Parse(Console.Readline());
+if(a==0){
+  if(b==0){
+    Console.Write(
