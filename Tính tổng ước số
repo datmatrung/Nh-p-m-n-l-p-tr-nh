@@ -3,8 +3,7 @@ Console.Write("Nhap N: ");
 N = int.Parse(Console.Readline());
 int S = 1 + N;
 int i = 2;
-while (i <= N/2)
-{
+while (i <= N/2){
   if (N % i == 0){
     S = S + i;
   }
