@@ -6,7 +6,6 @@ b = double.Parse(Console.ReadLine());
 Console.Write("Nhap c: ");
 c = double.Parse(Console.ReadLine());
 Console.WriteLine($"Giai phuong trinh bac 2: {a}x^2 + {b}x + {c} = 0");
-Console.ReadLine();
 double d = b * b - 4 * a * c;
 if (d < 0) {
 	Console.WriteLine("Phuong trinh vo nghiem");
