@@ -1,0 +1,30 @@
+int n;
+            Console.Write("Nhap n: ");
+            n = int.Parse(Console.ReadLine());
+            bool laSoNguyenTo = true;
+            if (n < 2)
+            {
+                laSoNguyenTo = false;
+            }
+            else
+            {
+                int i = 2;
+                while (i <= Math.Sqrt(n))
+                {
+                    if (n % i == 0)
+                    {
+                        laSoNguyenTo = false;
+                        break;
+                    }
+                    i = i + 1;
+                }
+            }
+            if (laSoNguyenTo)
+            {
+                Console.WriteLine($"{n} la so nguyen to");
+            }
+            else
+            {
+                Console.WriteLine($"{n} khong phai so nguyen to");
+            }
+            Console.ReadLine();
