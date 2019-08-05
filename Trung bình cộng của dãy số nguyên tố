@@ -33,6 +33,6 @@ while (a <= N)
 }
 if (dem > 0)
 {
-  Console.Write($"Trung binh cong cua day so nguyen to: {0.1*S/dem}");
+  Console.Write($"Trung binh cong cua day so nguyen to: {1.0*S/dem}");
 }
 Console.ReadLine();
