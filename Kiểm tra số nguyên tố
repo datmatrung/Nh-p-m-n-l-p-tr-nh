@@ -1,17 +1,17 @@
-int n;
-            Console.Write("Nhap n: ");
-            n = int.Parse(Console.ReadLine());
+int N;
+            Console.Write("Nhap N: ");
+            N = int.Parse(Console.ReadLine());
             bool laSoNguyenTo = true;
-            if (n < 2)
+            if (N < 2)
             {
                 laSoNguyenTo = false;
             }
             else
             {
                 int i = 2;
-                while (i <= Math.Sqrt(n))
+                while (i <= Math.Sqrt(N))
                 {
-                    if (n % i == 0)
+                    if (N % i == 0)
                     {
                         laSoNguyenTo = false;
                         break;
@@ -21,10 +21,10 @@ int n;
             }
             if (laSoNguyenTo)
             {
-                Console.WriteLine($"{n} la so nguyen to");
+                Console.WriteLine($"{N} la so nguyen to");
             }
             else
             {
-                Console.WriteLine($"{n} khong phai so nguyen to");
+                Console.WriteLine($"{N} khong phai so nguyen to");
             }
             Console.ReadLine();
