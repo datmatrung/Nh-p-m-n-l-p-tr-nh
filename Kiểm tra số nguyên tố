@@ -21,10 +21,10 @@ int N;
             }
             if (laSoNguyenTo)
             {
-                Console.WriteLine($"{N} la so nguyen to");
+                Console.Write($"{N} la so nguyen to");
             }
             else
             {
-                Console.WriteLine($"{N} khong phai so nguyen to");
+                Console.Write($"{N} khong phai so nguyen to");
             }
             Console.ReadLine();
