@@ -32,12 +32,16 @@
             int thang = int.Parse(Console.ReadLine());
             Console.Write("Nhap nam: ");
             int nam = int.Parse(Console.ReadLine());
+            
             if (LaNamNhuan(nam))
                 Console.WriteLine($"{nam} la nam nhuan");
             else Console.WriteLine($"{nam} khong la nam nhuan");
+            
             int SoNgay = TinhSoNgayTrongThang(thang, nam);
             Console.WriteLine($"Thang {thang} co {SoNgay} ngay");
+            
             int ThuTu = ThuTuNgayTrongNam(ngay, thang, nam);
             Console.WriteLine($"Ngay {ngay}/{thang}/{nam} la ngay thu {ThuTu} trong nam");
+            
             Console.ReadLine();
         }
