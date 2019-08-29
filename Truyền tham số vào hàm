@@ -11,3 +11,21 @@ Truyền cả giá trị và địa chỉ ô nhớ vào trong hàm.
 Với cách này, nó sẽ làm thay đổi giá trị của biến.
 Các bạn sử dụng cách này khi muốn trả về nhiều hơn 1 giá trị.
 Không sử dụng return và khai báo kiểu dữ liệu void cho hàm.
+
+        static void hoanvi(ref int x, ref int y)
+        {
+            int tam = x;
+            x = y;
+            y = tam;
+        }
+        static void Main(string[] args)
+        {
+            Console.Write("Nhap a: ");
+            int a = int.Parse(Console.ReadLine());
+            Console.Write("Nhap b: ");
+            int b = int.Parse(Console.ReadLine());
+            Console.WriteLine($"Truoc khi goi ham: a = {a}, b = {b}");
+            hoanvi(ref a, ref b);
+            Console.WriteLine($"Sau khi goi ham: a = {a}, b = {b}");
+            Console.ReadLine();
+        }
