@@ -7,20 +7,20 @@
             }
             return true;
         }
-        static void DaySoNguyenTo(int n)
+        static void InDaySoNguyenTo(int n)
         {
-            for (int i = 1; i <= n; i++)
+            for (int i = 2; i <= n; i++)
             {
                 if (LaSoNguyenTo(i))
                     Console.Write($"{i} ");
             }
         }
 
-        static double TBCDaySoNguyenTo(int n)
+        static double TinhTBCDaySoNguyenTo(int n)
         {
             int tong = 0;
             int dem = 0;
-            for (int i = 1; i <= n; i++)
+            for (int i = 2; i <= n; i++)
             {
                 if (LaSoNguyenTo(i))
                 {
@@ -40,9 +40,9 @@
             else
                 Console.WriteLine($"{n} khong la so nguyen to");
             Console.Write("Day so nguyen to: ");
-            DaySoNguyenTo(n);
+            InDaySoNguyenTo(n);
             Console.WriteLine();
-            double TBC = TBCDaySoNguyenTo(n);
+            double TBC = TinhTBCDaySoNguyenTo(n);
             Console.Write($"TBC Day so nguyen to: {TBC}");
             Console.ReadLine();
         }
