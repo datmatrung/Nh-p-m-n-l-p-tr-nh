@@ -1,0 +1,56 @@
+static int[] NhapMang()
+        {
+            int[] A;
+            Console.Write("Nhap so phan tu: ");
+            int N = int.Parse(Console.ReadLine());
+            A = new int[N];
+            for (int i = 0; i < A.Length; i++)
+            {
+                Console.Write($"Nhap A[{i}]: ");
+                A[i] = int.Parse(Console.ReadLine());
+            }
+            return A;
+        }
+        static bool LaSoNguyenTo(int n)
+        {
+            if (n < 2) return false;
+            for (int i = 2; i <= Math.Sqrt(n); i++)
+            {
+                if (n % i == 0) return false;
+            }
+            return true;
+        }
+        static void LietKeSoNguyenTo(int[] A)
+        {
+            for (int i = 0; i < A.Length; i++)
+            {
+                if (LaSoNguyenTo(A[i]))
+                {
+                    Console.Write($"{A[i]} ");
+                }
+            }
+        }
+        static double TinhTBCSoNguyenTo(int[] A)
+        {
+            int S = 0; int dem = 0;
+            for (int i = 0; i < A.Length; i++)
+            {
+                if (LaSoNguyenTo(A[i]))
+                {
+                    S += A[i];
+                    dem++;
+                }
+            }
+            if (dem == 0) return 0;
+            return (1.0 * S) / dem;
+        }
+        static void Main(string[] args)
+        {
+            int[] A;
+            A = NhapMang();
+            LietKeSoNguyenTo(A);
+            Console.WriteLine();
+            var TBC = TinhTBCSoNguyenTo(A);
+            Console.WriteLine($"TBC so nguyen to: {TBC}");
+            Console.ReadLine();
+        }
