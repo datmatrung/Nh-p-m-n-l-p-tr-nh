@@ -94,10 +94,30 @@
             }
             return ViTri;
         }
+        static void LietKeTongS(int[] A, int S)
+        {
+            for (int i = 0; i < A.Length - 1; i++)
+            {
+                for (int j = i + 1; j < A.Length; j++)
+                {
+                    if (A[i] + A[j] == S)
+                        Console.Write($"({A[i]}, {A[j]}) ");
+                }
+            }
+        }
+        static bool KiemTraTangDan(int[] A)
+        {
+            for (int i = 1; i < A.Length; i++)
+            {
+                if (A[i] < A[i-1]) return false;
+            }
+            return true;
+        }
         static void Main(string[] args)
         {
             int[] A;
             A = NhapMang();
+            Console.Write("Cac so nguyen to trong mang: ");
             LietKeSoNguyenTo(A);
             Console.WriteLine();
             var TBC = TinhTBCSoNguyenTo(A);
@@ -110,5 +130,10 @@
             Console.WriteLine($"So duong nho nhat o vi tri: {DuongNhoNhat}");
             var AmLonNhat = TimPhanTuAmLonNhat(A);
             Console.WriteLine($"So am lon nhat o vi tri: {AmLonNhat}");
+            Console.Write("Cac cap so co tong la 100: ");
+            LietKeTongS(A, 100);
+            Console.WriteLine();
+            var TangDan = KiemTraTangDan(A);
+            Console.WriteLine($"Mang co tang dan hay khong: {TangDan}");
             Console.ReadLine();
         }
