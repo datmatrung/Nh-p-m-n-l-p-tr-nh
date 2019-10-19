@@ -1,4 +1,4 @@
-static int[] NhapMang()
+        static int[] NhapMang()
         {
             int[] A;
             Console.Write("Nhap so phan tu: ");
@@ -44,6 +44,56 @@ static int[] NhapMang()
             if (dem == 0) return 0;
             return (1.0 * S) / dem;
         }
+        static int TimPhanTuDuongDauTien(int[] A)
+        {
+            for (int i = 0; i < A.Length; i++)
+            {
+                if (A[i] > 0) return i;
+            }
+            return -1;
+        }
+        static int TimPhanTuAmCuoiCung(int[] A)
+        {
+            for (int i = A.Length - 1; i >= 0; i--)
+            {
+                if (A[i] < 0) return i;
+            }
+            return -1;
+        }
+        static int TimPhanTuDuongNhoNhat(int[] A)
+        {
+            int ViTri = -1;
+            for (int i = 0; i < A.Length; i++)
+            {
+                if (A[i] > 0) ViTri = i;
+                break;
+            }
+            if (ViTri != -1)
+            {
+                for (int i = ViTri + 1; i < A.Length; i++)
+                {
+                    if (A[i] > 0 && A[i] < A[ViTri]) ViTri = i;
+                }
+            }
+            return ViTri;
+        }
+        static int TimPhanTuAmLonNhat(int[] A)
+        {
+            int ViTri = -1;
+            for (int i = 0; i < A.Length; i++)
+            {
+                if (A[i] < 0) ViTri = i;
+                break;
+            }
+            if (ViTri != -1)
+            {
+                for (int i = ViTri + 1; i < A.Length; i++)
+                {
+                    if (A[i] < 0 && A[i] > A[ViTri]) ViTri = i;
+                }
+            }
+            return ViTri;
+        }
         static void Main(string[] args)
         {
             int[] A;
@@ -52,5 +102,13 @@ static int[] NhapMang()
             Console.WriteLine();
             var TBC = TinhTBCSoNguyenTo(A);
             Console.WriteLine($"TBC so nguyen to: {TBC}");
+            var duong = TimPhanTuDuongDauTien(A);
+            Console.WriteLine($"So duong dau tien o vi tri: {duong}");
+            var am = TimPhanTuAmCuoiCung(A);
+            Console.WriteLine($"So am cuoi cung o vi tri: {am}");
+            var DuongNhoNhat = TimPhanTuDuongNhoNhat(A);
+            Console.WriteLine($"So duong nho nhat o vi tri: {DuongNhoNhat}");
+            var AmLonNhat = TimPhanTuAmLonNhat(A);
+            Console.WriteLine($"So am lon nhat o vi tri: {AmLonNhat}");
             Console.ReadLine();
         }
