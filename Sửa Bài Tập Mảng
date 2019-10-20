@@ -1,4 +1,4 @@
-        /*static int[] NhapMang()
+        static int[] NhapMang()
         {
             int[] A;
             Console.Write("Nhap so phan tu: ");
@@ -87,10 +87,10 @@
                 if (A[i] < A[i-1]) return false;
             }
             return true;
-        }*/
+        }
         static void Main(string[] args)
         {
-            /*int[] A;
+            int[] A;
             A = NhapMang();
             Console.Write("Cac so nguyen to trong mang: ");
             LietKeSoNguyenTo(A);
@@ -105,6 +105,6 @@
             LietKeTongS(A, 100);
             Console.WriteLine();
             var TangDan = KiemTraTangDan(A);
-            Console.WriteLine($"Mang co tang dan hay khong: {TangDan}");*/
+            Console.WriteLine($"Mang co tang dan hay khong: {TangDan}");
             Console.ReadLine();
         }
