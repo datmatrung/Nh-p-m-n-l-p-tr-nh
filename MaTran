@@ -40,32 +40,9 @@
         {
             int min = TinhTongDong(A, 0);
             int minIndex = 0;
-            for (int i = 0; i < A.GetLength(0); i++)
+            for (int i = 1; i < A.GetLength(0); i++)
             {
                 if (TinhTongDong(A,i) < min)
-                {
-                    min = TinhTongDong(A, i);
-                    minIndex = i;
-                }
-            }
-            return minIndex;
-        }
-        static int TinhTongCot(int[,] A, int k)
-        {
-            int S = 0;
-            for (int i = 0; i < A.GetLength(0); i++)
-            {
-                S += A[i, k];
-            }
-            return S;
-        }
-        static int TimDongCoTongNhoNhat(int[,] A)
-        {
-            int min = TinhTongDong(A, 0);
-            int minIndex = 0;
-            for (int i = 0; i < A.GetLength(0); i++)
-            {
-                if (TinhTongDong(A, i) < min)
                 {
                     min = TinhTongDong(A, i);
                     minIndex = i;
@@ -93,8 +70,6 @@
             XuatMang(A);
             var dong = TimDongCoTongNhoNhat(A);
             Console.WriteLine($"Dong co tong nho nhat la {dong}");
-            var cot = TimCotCoTongNhoNhat(A);
-            Console.WriteLine($"Cot co tong nho nhat la {cot}");
             var bien = TinhTongBien(A);
             Console.WriteLine($"Tong bien cua ma tran la {bien}");
             Console.ReadLine();
