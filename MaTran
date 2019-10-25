@@ -1,4 +1,4 @@
-static int[,] NhapMang()
+        static int[,] NhapMang()
         {
             int[,] A;
             Console.Write("Nhap so dong: ");
@@ -59,19 +59,19 @@ static int[,] NhapMang()
             }
             return S;
         }
-        static int TimCotCoTongLonNhat(int[,] A)
+        static int TimDongCoTongNhoNhat(int[,] A)
         {
-            int max = TinhTongCot(A, 0);
-            int maxIndex = 0;
-            for (int j = 0; j < A.GetLength(1); j++)
+            int min = TinhTongDong(A, 0);
+            int minIndex = 0;
+            for (int i = 0; i < A.GetLength(0); i++)
             {
-                if (TinhTongCot(A, j) > max)
+                if (TinhTongDong(A, i) < min)
                 {
-                    max = TinhTongCot(A, j);
-                    maxIndex = j;
+                    min = TinhTongDong(A, i);
+                    minIndex = i;
                 }
             }
-            return maxIndex;
+            return minIndex;
         }
         static int TinhTongBien(int[,] A)
         {
@@ -93,8 +93,8 @@ static int[,] NhapMang()
             XuatMang(A);
             var dong = TimDongCoTongNhoNhat(A);
             Console.WriteLine($"Dong co tong nho nhat la {dong}");
-            var cot = TimCotCoTongLonNhat(A);
-            Console.WriteLine($"Cot co tong lon nhat la {cot}");
+            var cot = TimCotCoTongNhoNhat(A);
+            Console.WriteLine($"Cot co tong nho nhat la {cot}");
             var bien = TinhTongBien(A);
             Console.WriteLine($"Tong bien cua ma tran la {bien}");
             Console.ReadLine();
