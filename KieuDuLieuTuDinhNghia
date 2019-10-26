@@ -1,3 +1,8 @@
+    struct PhanSo
+    {
+        public int TuSo;
+        public int MauSo;
+    }
     struct ToaDoDiem
         {
             public double x;
@@ -8,6 +13,27 @@
             public ToaDoDiem A;
             public ToaDoDiem B;
             public ToaDoDiem C;
+        }
+    static PhanSo NhapPhanSo(string ThongBao)
+        {
+            PhanSo A;
+            Console.WriteLine(ThongBao);
+            Console.Write("Tu so: ");
+            A.TuSo = int.Parse(Console.ReadLine());
+            Console.Write("Mau so: ");
+            A.MauSo = int.Parse(Console.ReadLine());
+            return A;
+        }
+    static void XuatPhanSo(PhanSo A)
+        {
+            Console.WriteLine($"{A.TuSo}/{A.MauSo}");
+        }
+    static PhanSo TinhTongPhanSo(PhanSo A, PhanSo B)
+        {
+            PhanSo S;
+            S.TuSo = A.TuSo * B.MauSo + A.MauSo * B.TuSo;
+            S.MauSo = A.MauSo * B.MauSo;
+            return S;
         }
     static ToaDoDiem NhapDiem(string ThongBao)
         {
@@ -42,6 +68,11 @@
         }
     static void Main(string[] args)
         {
+            PhanSo A = NhapPhanSo("Nhap phan so A: ");
+            PhanSo B = NhapPhanSo("Nhap phan so B: ");
+            PhanSo S = TinhTongPhanSo(A, B);
+            Console.Write("Tong hai phan so: ");
+            XuatPhanSo(S);
             ToaDoDiem A = NhapDiem("Nhap diem A: ");
             ToaDoDiem B = NhapDiem("Nhap diem B: ");
             var AB = TinhKhoangCach(A, B);
