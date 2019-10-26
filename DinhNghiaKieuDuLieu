@@ -1,0 +1,28 @@
+    struct ToaDoDiem
+        {
+            public double x;
+            public double y;
+        }
+    static ToaDoDiem NhapDiem(string ThongBao)
+        {
+            ToaDoDiem A;
+            Console.WriteLine(ThongBao);
+            Console.Write("Nhap x: ");
+            A.x = int.Parse(Console.ReadLine());
+            Console.Write("Nhap y: ");
+            A.y = int.Parse(Console.ReadLine());
+            return A;
+        }
+    static double TinhKhoangCach(ToaDoDiem A, ToaDoDiem B)
+        {
+            double KetQua = Math.Sqrt(Math.Pow((B.x - A.x), 2) + Math.Pow((B.y - A.y), 2));
+            return KetQua;
+        }
+    static void Main(string[] args)
+        {
+            ToaDoDiem A = NhapDiem("Nhap diem A: ");
+            ToaDoDiem B = NhapDiem("Nhap diem B: ");
+            var AB = TinhKhoangCach(A, B);
+            Console.Write($"Khoang cach AB: {AB}");
+            Console.ReadLine();
+        }
