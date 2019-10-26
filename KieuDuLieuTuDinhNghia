@@ -1,8 +1,8 @@
     struct PhanSo
-    {
-        public int TuSo;
-        public int MauSo;
-    }
+        {
+            public int TuSo;
+            public int MauSo;
+        }
     struct ToaDoDiem
         {
             public double x;
