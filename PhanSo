@@ -5,8 +5,8 @@
     }
     static PhanSo NhapPhanSo(string ThongBao)
         {
-            Console.WriteLine(ThongBao);
             PhanSo A;
+            Console.WriteLine(ThongBao);
             Console.Write("Tu so: ");
             A.TuSo = int.Parse(Console.ReadLine());
             Console.Write("Mau so: ");
