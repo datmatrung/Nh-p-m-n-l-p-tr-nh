@@ -52,26 +52,6 @@ struct PhanSo
             if (dem == 0) return 0;
             return 1.0 * S / dem;
         }
-        static PhanSo NhapPhanSo(string ThongBao)
-        {
-            PhanSo A;
-            Console.WriteLine(ThongBao);
-            Console.WriteLine("Nhap tu so: ");
-            A.TuSo = int.Parse(Console.ReadLine());
-            Console.WriteLine("Nhap mau so: ");
-            A.MauSo = int.Parse(Console.ReadLine());
-            return A;
-        }
-        static PhanSo TongPhanSo(PhanSo[] A)
-        {
-            PhanSo S = A[0];
-            for (int i = 1; i < A.Length; i++)
-            {
-                S.TuSo = S.TuSo * A[i].MauSo + S.MauSo * A[i].TuSo;
-                S.MauSo = S.MauSo * A[i].MauSo;
-            }
-            return S;
-        }
         static PhanSo[] NhapMangPhanSo()
         {
             PhanSo[] A;
@@ -87,6 +67,16 @@ struct PhanSo
                 A[i].MauSo = int.Parse(Console.ReadLine());
             }
             return A;
+        }
+        static PhanSo TongPhanSo(PhanSo[] A)
+        {
+            PhanSo S = A[0];
+            for (int i = 1; i < A.Length; i++)
+            {
+                S.TuSo = S.TuSo * A[i].MauSo + S.MauSo * A[i].TuSo;
+                S.MauSo = S.MauSo * A[i].MauSo;
+            }
+            return S;
         }
         static void XuatPhanSo(PhanSo A)
         {
@@ -109,6 +99,7 @@ struct PhanSo
             /*int[] A = NhapMang();
             var TBCSoNguyenTo = TinhTBCSoNguyenTo(A);
             Console.WriteLine($"TBC So Nguyen To: {TBCSoNguyenTo}");*/
+            
             PhanSo[] A = NhapMangPhanSo();
             PhanSo S = TongPhanSo(A);
             Console.Write("Tong phan so: ");
