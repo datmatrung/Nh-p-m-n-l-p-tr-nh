@@ -1,4 +1,4 @@
-struct PhanSo
+    struct PhanSo
     {
         public int TuSo;
         public int MauSo;
